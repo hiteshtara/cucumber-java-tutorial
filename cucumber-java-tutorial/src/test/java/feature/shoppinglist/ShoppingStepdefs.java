@@ -29,7 +29,7 @@ public class ShoppingStepdefs {
    }
    @Then("^it should look like:$")
    public void it_should_look_like(String expected) throws Throwable {
-       assertEquals(expected, printedList.toString());
+       assertEquals(expected.replaceAll("\\s+",""), new StringBuilder(printedList.toString().replaceAll("\\s+","")).toString());
    }
    public static class ShoppingItem {
 	      private String name;
